@@ -2,14 +2,17 @@
 
 var utils = require('../utils/writer.js');
 var BasicServices = require('../service/BasicServicesService');
+var executionAndTraceService = require('onf-core-model-ap/applicationPattern/services/ExecutionAndTraceService');
 
 module.exports.embedYourself = function embedYourself (req, res, next, body, user, originator, xCorrelator, traceIndicator, customerJourney) {
   BasicServices.embedYourself(body, user, originator, xCorrelator, traceIndicator, customerJourney)
     .then(function (response) {
       utils.writeJson(res, response);
+      executionAndTraceService.recordServiceRequest(xCorrelator, traceIndicator, user, originator, req.url, 200, req.body, responseBody);
     })
     .catch(function (response) {
       utils.writeJson(res, response);
+      executionAndTraceService.recordServiceRequest(xCorrelator, traceIndicator, user, originator, req.url, 500, req.body, responseBody);
     });
 };
 
@@ -17,9 +20,11 @@ module.exports.endSubscription = function endSubscription (req, res, next, body,
   BasicServices.endSubscription(body, user, originator, xCorrelator, traceIndicator, customerJourney)
     .then(function (response) {
       utils.writeJson(res, response);
+      executionAndTraceService.recordServiceRequest(xCorrelator, traceIndicator, user, originator, req.url, 200, req.body, responseBody);
     })
     .catch(function (response) {
       utils.writeJson(res, response);
+      executionAndTraceService.recordServiceRequest(xCorrelator, traceIndicator, user, originator, req.url, 500, req.body, responseBody);
     });
 };
 
@@ -27,9 +32,11 @@ module.exports.informAboutApplication = function informAboutApplication (req, re
   BasicServices.informAboutApplication(user, originator, xCorrelator, traceIndicator, customerJourney)
     .then(function (response) {
       utils.writeJson(res, response);
+      executionAndTraceService.recordServiceRequest(xCorrelator, traceIndicator, user, originator, req.url, 200, req.body, responseBody);
     })
     .catch(function (response) {
       utils.writeJson(res, response);
+      executionAndTraceService.recordServiceRequest(xCorrelator, traceIndicator, user, originator, req.url, 500, req.body, responseBody);
     });
 };
 
@@ -37,9 +44,11 @@ module.exports.informAboutApplicationInGenericRepresentation = function informAb
   BasicServices.informAboutApplicationInGenericRepresentation(user, originator, xCorrelator, traceIndicator, customerJourney)
     .then(function (response) {
       utils.writeJson(res, response);
+      executionAndTraceService.recordServiceRequest(xCorrelator, traceIndicator, user, originator, req.url, 200, req.body, responseBody);
     })
     .catch(function (response) {
       utils.writeJson(res, response);
+      executionAndTraceService.recordServiceRequest(xCorrelator, traceIndicator, user, originator, req.url, 500, req.body, responseBody);
     });
 };
 
@@ -47,9 +56,11 @@ module.exports.informAboutReleaseHistory = function informAboutReleaseHistory (r
   BasicServices.informAboutReleaseHistory(user, originator, xCorrelator, traceIndicator, customerJourney)
     .then(function (response) {
       utils.writeJson(res, response);
+      executionAndTraceService.recordServiceRequest(xCorrelator, traceIndicator, user, originator, req.url, 200, req.body, responseBody);
     })
     .catch(function (response) {
       utils.writeJson(res, response);
+      executionAndTraceService.recordServiceRequest(xCorrelator, traceIndicator, user, originator, req.url, 500, req.body, responseBody);
     });
 };
 
@@ -57,9 +68,11 @@ module.exports.informAboutReleaseHistoryInGenericRepresentation = function infor
   BasicServices.informAboutReleaseHistoryInGenericRepresentation(user, originator, xCorrelator, traceIndicator, customerJourney)
     .then(function (response) {
       utils.writeJson(res, response);
+      executionAndTraceService.recordServiceRequest(xCorrelator, traceIndicator, user, originator, req.url, 200, req.body, responseBody);
     })
     .catch(function (response) {
       utils.writeJson(res, response);
+      executionAndTraceService.recordServiceRequest(xCorrelator, traceIndicator, user, originator, req.url, 500, req.body, responseBody);
     });
 };
 
@@ -67,9 +80,11 @@ module.exports.inquireOamRequestApprovals = function inquireOamRequestApprovals 
   BasicServices.inquireOamRequestApprovals(body, user, originator, xCorrelator, traceIndicator, customerJourney)
     .then(function (response) {
       utils.writeJson(res, response);
+      executionAndTraceService.recordServiceRequest(xCorrelator, traceIndicator, user, originator, req.url, 200, req.body, responseBody);
     })
     .catch(function (response) {
       utils.writeJson(res, response);
+      executionAndTraceService.recordServiceRequest(xCorrelator, traceIndicator, user, originator, req.url, 500, req.body, responseBody);
     });
 };
 
@@ -77,9 +92,11 @@ module.exports.listLtpsAndFcs = function listLtpsAndFcs (req, res, next, user, o
   BasicServices.listLtpsAndFcs(user, originator, xCorrelator, traceIndicator, customerJourney)
     .then(function (response) {
       utils.writeJson(res, response);
+      executionAndTraceService.recordServiceRequest(xCorrelator, traceIndicator, user, originator, req.url, 200, req.body, responseBody);
     })
     .catch(function (response) {
       utils.writeJson(res, response);
+      executionAndTraceService.recordServiceRequest(xCorrelator, traceIndicator, user, originator, req.url, 500, req.body, responseBody);
     });
 };
 
@@ -87,9 +104,11 @@ module.exports.redirectOamRequestInformation = function redirectOamRequestInform
   BasicServices.redirectOamRequestInformation(body, user, originator, xCorrelator, traceIndicator, customerJourney)
     .then(function (response) {
       utils.writeJson(res, response);
+      executionAndTraceService.recordServiceRequest(xCorrelator, traceIndicator, user, originator, req.url, 200, req.body, responseBody);
     })
     .catch(function (response) {
       utils.writeJson(res, response);
+      executionAndTraceService.recordServiceRequest(xCorrelator, traceIndicator, user, originator, req.url, 500, req.body, responseBody);
     });
 };
 
@@ -97,9 +116,11 @@ module.exports.redirectServiceRequestInformation = function redirectServiceReque
   BasicServices.redirectServiceRequestInformation(body, user, originator, xCorrelator, traceIndicator, customerJourney)
     .then(function (response) {
       utils.writeJson(res, response);
+      executionAndTraceService.recordServiceRequest(xCorrelator, traceIndicator, user, originator, req.url, 200, req.body, responseBody);
     })
     .catch(function (response) {
       utils.writeJson(res, response);
+      executionAndTraceService.recordServiceRequest(xCorrelator, traceIndicator, user, originator, req.url, 500, req.body, responseBody);
     });
 };
 
@@ -107,9 +128,11 @@ module.exports.redirectTopologyChangeInformation = function redirectTopologyChan
   BasicServices.redirectTopologyChangeInformation(body, user, originator, xCorrelator, traceIndicator, customerJourney)
     .then(function (response) {
       utils.writeJson(res, response);
+      executionAndTraceService.recordServiceRequest(xCorrelator, traceIndicator, user, originator, req.url, 200, req.body, responseBody);
     })
     .catch(function (response) {
       utils.writeJson(res, response);
+      executionAndTraceService.recordServiceRequest(xCorrelator, traceIndicator, user, originator, req.url, 500, req.body, responseBody);
     });
 };
 
@@ -117,9 +140,11 @@ module.exports.registerYourself = function registerYourself (req, res, next, bod
   BasicServices.registerYourself(body, user, originator, xCorrelator, traceIndicator, customerJourney)
     .then(function (response) {
       utils.writeJson(res, response);
+      executionAndTraceService.recordServiceRequest(xCorrelator, traceIndicator, user, originator, req.url, 200, req.body, responseBody);
     })
     .catch(function (response) {
       utils.writeJson(res, response);
+      executionAndTraceService.recordServiceRequest(xCorrelator, traceIndicator, user, originator, req.url, 500, req.body, responseBody);
     });
 };
 
@@ -127,9 +152,11 @@ module.exports.updateClient = function updateClient (req, res, next, body, user,
   BasicServices.updateClient(body, user, originator, xCorrelator, traceIndicator, customerJourney)
     .then(function (response) {
       utils.writeJson(res, response);
+      executionAndTraceService.recordServiceRequest(xCorrelator, traceIndicator, user, originator, req.url, 200, req.body, responseBody);
     })
     .catch(function (response) {
       utils.writeJson(res, response);
+      executionAndTraceService.recordServiceRequest(xCorrelator, traceIndicator, user, originator, req.url, 500, req.body, responseBody);
     });
 };
 
@@ -137,9 +164,11 @@ module.exports.updateOperationClient = function updateOperationClient (req, res,
   BasicServices.updateOperationClient(body, user, originator, xCorrelator, traceIndicator, customerJourney)
     .then(function (response) {
       utils.writeJson(res, response);
+      executionAndTraceService.recordServiceRequest(xCorrelator, traceIndicator, user, originator, req.url, 200, req.body, responseBody);
     })
     .catch(function (response) {
       utils.writeJson(res, response);
+      executionAndTraceService.recordServiceRequest(xCorrelator, traceIndicator, user, originator, req.url, 500, req.body, responseBody);
     });
 };
 
@@ -147,8 +176,10 @@ module.exports.updateOperationKey = function updateOperationKey (req, res, next,
   BasicServices.updateOperationKey(body, user, originator, xCorrelator, traceIndicator, customerJourney)
     .then(function (response) {
       utils.writeJson(res, response);
+      executionAndTraceService.recordServiceRequest(xCorrelator, traceIndicator, user, originator, req.url, 200, req.body, responseBody);
     })
     .catch(function (response) {
       utils.writeJson(res, response);
+      executionAndTraceService.recordServiceRequest(xCorrelator, traceIndicator, user, originator, req.url, 500, req.body, responseBody);
     });
 };

@@ -530,7 +530,7 @@
                             "tcp-client-interface-configuration": {
                                 "remote-address": {
                                     "ip-address": {
-                                        "ipv-4-address": " >>> IpAddress and Port (below) of the existing release <<< "
+                                        "ipv-4-address": "126.0.01:8080"
                                     }
                                 },
                                 "remote-port": 1000
@@ -842,7 +842,7 @@
                             "tcp-client-interface-configuration": {
                                 "remote-address": {
                                     "ip-address": {
-                                        "ipv-4-address": " >>> IP address and Port (below) of current ExecutionAndTraceLog <<< "
+                                        "ipv-4-address": "126.0.01:8081"
                                     }
                                 },
                                 "remote-port": 1002

@@ -2,6 +2,7 @@
 
 var path = require('path');
 var http = require('http');
+var appCommons = require('onf-core-model-ap/applicationPattern/commons/AppCommons');
 
 var oas3Tools = require('oas3-tools');
 var serverPort = 8080;
@@ -9,12 +10,18 @@ var serverPort = 8080;
 // swaggerRouter configuration
 var options = {
     routing: {
-        controllers: path.join(__dirname, './controllers')
-    },
+        controllers: path.join(__dirname, './controllers'),
+        useStubs: false
+    }, swaggerUI: {
+        swaggerUIPath: '/swagger',//null,
+        tryItOutEnabled: true
+    }
 };
 
 var expressAppConfig = oas3Tools.expressAppConfig(path.join(__dirname, 'api/openapi.yaml'), options);
 var app = expressAppConfig.getApp();
+
+appCommons.setupExpressApp(app);
 
 // Initialize the Swagger middleware
 http.createServer(app).listen(serverPort, function () {
