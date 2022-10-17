@@ -11,6 +11,7 @@ var options = {
     routing: {
         controllers: path.join(__dirname, './controllers')
     },
+        swaggerUIPath: '/docs',//null,
 };
 
 var expressAppConfig = oas3Tools.expressAppConfig(path.join(__dirname, 'api/openapi.yaml'), options);
