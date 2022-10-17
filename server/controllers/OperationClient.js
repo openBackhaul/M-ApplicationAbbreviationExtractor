@@ -3,7 +3,6 @@
 var utils = require('../utils/writer.js');
 var OperationClient = require('../service/OperationClientService');
 var oamLogService = require('onf-core-model-ap/applicationPattern/services/OamLogService');
-var executionAndTraceService = require('onf-core-model-ap/applicationPattern/services/ExecutionAndTraceService');
 
 module.exports.getOperationClientDetailedLoggingIsOn = function getOperationClientDetailedLoggingIsOn (req, res, next, uuid) {
   OperationClient.getOperationClientDetailedLoggingIsOn(uuid)
