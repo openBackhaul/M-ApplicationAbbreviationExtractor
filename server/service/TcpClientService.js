@@ -33,7 +33,8 @@ exports.getTcpClientRemoteAddress = function(uuid, requestUrl) {
  * uuid String 
  * returns inline_response_200_28
  **/
-requestUrl  return new Promise(function(resolve, reject) {
+exports.getTcpClientRemotePort = function(uuid) {
+  return new Promise(function(resolve, reject, requestUrl) {
     var examples = {};
     examples['application/json'] = {
   "tcp-client-interface-1-0:remote-port" : 1000

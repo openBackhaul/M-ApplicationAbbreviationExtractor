@@ -8,6 +8,16 @@ var responseCodeEnum = require('onf-core-model-ap/applicationPattern/rest/server
 var fileOperation = require('onf-core-model-ap/applicationPattern/databaseDriver/JSONDriver');
 
 module.exports.getOperationClientDetailedLoggingIsOn = function getOperationClientDetailedLoggingIsOn (req, res, next, uuid) {
+  new Promise(async function (resolve, reject) {
+    try {
+      var data = await fileOperation.readFromDatabaseAsync("core-model-1-4:control-construct/uuid");
+      await fileOperation.writeToDatabaseAsync("core-model-1-4:control-construct/uuid", data, false);
+      resolve();
+    } catch (error) {
+      reject();
+    }
+  });
+
   OperationClient.getOperationClientDetailedLoggingIsOn(uuid, req.url)
     .then(function (response) {
       let responseCode = responseCodeEnum.code.OK;
