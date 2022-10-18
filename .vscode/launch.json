@@ -6,7 +6,8 @@
         "request": "launch",
         "name": "Launch Program",
         "skipFiles": ["<node_internals>/**"],
-        "program": "${workspaceFolder}\\server\\index.js"
+        "program": "${workspaceFolder}\\server\\index.js",
+        "cwd": "${workspaceFolder}\\server"
       }
     ]
   }

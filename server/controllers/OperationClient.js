@@ -2,14 +2,17 @@
 
 var utils = require('../utils/writer.js');
 var OperationClient = require('../service/OperationClientService');
+var oamLogService = require('onf-core-model-ap/applicationPattern/services/OamLogService');
 
 module.exports.getOperationClientDetailedLoggingIsOn = function getOperationClientDetailedLoggingIsOn (req, res, next, uuid) {
   OperationClient.getOperationClientDetailedLoggingIsOn(uuid)
     .then(function (response) {
       utils.writeJson(res, response);
+      oamLogService.recordOamRequest(req.url, req.body, 200, req.headers.authorization, req.method);
     })
     .catch(function (response) {
       utils.writeJson(res, response);
+      oamLogService.recordOamRequest(req.url, req.body, 500, req.headers.authorization, req.method);
     });
 };
 
@@ -17,9 +20,11 @@ module.exports.getOperationClientLifeCycleState = function getOperationClientLif
   OperationClient.getOperationClientLifeCycleState(uuid)
     .then(function (response) {
       utils.writeJson(res, response);
+      oamLogService.recordOamRequest(req.url, req.body, 200, req.headers.authorization, req.method);
     })
     .catch(function (response) {
       utils.writeJson(res, response);
+      oamLogService.recordOamRequest(req.url, req.body, 500, req.headers.authorization, req.method);
     });
 };
 
@@ -27,9 +32,11 @@ module.exports.getOperationClientOperationKey = function getOperationClientOpera
   OperationClient.getOperationClientOperationKey(uuid)
     .then(function (response) {
       utils.writeJson(res, response);
+      oamLogService.recordOamRequest(req.url, req.body, 200, req.headers.authorization, req.method);
     })
     .catch(function (response) {
       utils.writeJson(res, response);
+      oamLogService.recordOamRequest(req.url, req.body, 500, req.headers.authorization, req.method);
     });
 };
 
@@ -37,9 +44,11 @@ module.exports.getOperationClientOperationName = function getOperationClientOper
   OperationClient.getOperationClientOperationName(uuid)
     .then(function (response) {
       utils.writeJson(res, response);
+      oamLogService.recordOamRequest(req.url, req.body, 200, req.headers.authorization, req.method);
     })
     .catch(function (response) {
       utils.writeJson(res, response);
+      oamLogService.recordOamRequest(req.url, req.body, 500, req.headers.authorization, req.method);
     });
 };
 
@@ -47,9 +56,11 @@ module.exports.getOperationClientOperationalState = function getOperationClientO
   OperationClient.getOperationClientOperationalState(uuid)
     .then(function (response) {
       utils.writeJson(res, response);
+      oamLogService.recordOamRequest(req.url, req.body, 200, req.headers.authorization, req.method);
     })
     .catch(function (response) {
       utils.writeJson(res, response);
+      oamLogService.recordOamRequest(req.url, req.body, 500, req.headers.authorization, req.method);
     });
 };
 
@@ -57,9 +68,11 @@ module.exports.putOperationClientDetailedLoggingIsOn = function putOperationClie
   OperationClient.putOperationClientDetailedLoggingIsOn(body, uuid)
     .then(function (response) {
       utils.writeJson(res, response);
+      oamLogService.recordOamRequest(req.url, req.body, 200, req.headers.authorization, req.method);
     })
     .catch(function (response) {
       utils.writeJson(res, response);
+      oamLogService.recordOamRequest(req.url, req.body, 500, req.headers.authorization, req.method);
     });
 };
 
@@ -67,9 +80,11 @@ module.exports.putOperationClientOperationKey = function putOperationClientOpera
   OperationClient.putOperationClientOperationKey(body, uuid)
     .then(function (response) {
       utils.writeJson(res, response);
+      oamLogService.recordOamRequest(req.url, req.body, 200, req.headers.authorization, req.method);
     })
     .catch(function (response) {
       utils.writeJson(res, response);
+      oamLogService.recordOamRequest(req.url, req.body, 500, req.headers.authorization, req.method);
     });
 };
 
@@ -77,8 +92,10 @@ module.exports.putOperationClientOperationName = function putOperationClientOper
   OperationClient.putOperationClientOperationName(body, uuid)
     .then(function (response) {
       utils.writeJson(res, response);
+      oamLogService.recordOamRequest(req.url, req.body, 200, req.headers.authorization, req.method);
     })
     .catch(function (response) {
       utils.writeJson(res, response);
+      oamLogService.recordOamRequest(req.url, req.body, 500, req.headers.authorization, req.method);
     });
 };
