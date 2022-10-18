@@ -13,7 +13,7 @@ var options = {
         controllers: path.join(__dirname, './controllers'),
         useStubs: false
     }, swaggerUI: {
-        swaggerUIPath: '/swagger',//null,
+        swaggerUIPath: '/docs',//null,
         tryItOutEnabled: true
     },
     openApiValidator: appCommons.openApiValidatorOptions
@@ -27,7 +27,7 @@ appCommons.setupExpressApp(app);
 // Initialize the Swagger middleware
 http.createServer(app).listen(serverPort, function () {
     console.log('Your server is listening on port %d (http://localhost:%d)', serverPort, serverPort);
-    console.log('Swagger-ui is available on http://localhost:%d/swagger', serverPort);
+    console.log('Swagger-ui is available on http://localhost:%d/docs', serverPort);
 });
 
 global.databasePath = './database/load.json'
