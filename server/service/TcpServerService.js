@@ -7,7 +7,7 @@
  * uuid String 
  * returns inline_response_200_18
  **/
-exports.getTcpServerLocalAddress = function(uuid) {
+exports.getTcpServerLocalAddress = function(uuid, requestUrl) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
@@ -31,7 +31,7 @@ exports.getTcpServerLocalAddress = function(uuid) {
  * uuid String 
  * returns inline_response_200_19
  **/
-exports.getTcpServerLocalPort = function(uuid) {
+exports.getTcpServerLocalPort = function(uuid, requestUrl) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
@@ -53,7 +53,7 @@ exports.getTcpServerLocalPort = function(uuid) {
  * uuid String 
  * no response value expected for this operation
  **/
-exports.putTcpServerLocalAddress = function(body,uuid) {
+exports.putTcpServerLocalAddress = function(body, uuid, requestUrl) {
   return new Promise(function(resolve, reject) {
     resolve();
   });
@@ -67,7 +67,7 @@ exports.putTcpServerLocalAddress = function(body,uuid) {
  * uuid String 
  * no response value expected for this operation
  **/
-exports.putTcpServerLocalPort = function(body,uuid) {
+exports.putTcpServerLocalPort = function(body, uuid, requestUrl) {
   return new Promise(function(resolve, reject) {
     resolve();
   });

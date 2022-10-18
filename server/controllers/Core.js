@@ -5,9 +5,10 @@ var Core = require('../service/CoreService');
 var oamLogService = require('onf-core-model-ap/applicationPattern/services/OamLogService');
 var responseBuilder = require('onf-core-model-ap/applicationPattern/rest/server/ResponseBuilder');
 var responseCodeEnum = require('onf-core-model-ap/applicationPattern/rest/server/ResponseCode');
+var fileOperation = require('onf-core-model-ap/applicationPattern/databaseDriver/JSONDriver');
 
 module.exports.getControlConstruct = function getControlConstruct (req, res, next) {
-  Core.getControlConstruct()
+  Core.getControlConstruct(req.url)
     .then(function (response) {
       let responseCode = responseCodeEnum.code.OK;
       responseBuilder.buildResponse(res, responseCode, response);

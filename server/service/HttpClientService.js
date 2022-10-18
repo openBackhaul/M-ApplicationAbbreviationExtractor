@@ -7,7 +7,7 @@
  * uuid String 
  * returns inline_response_200_25
  **/
-exports.getHttpClientApplicationName = function(uuid) {
+exports.getHttpClientApplicationName = function(uuid, requestUrl) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
@@ -28,7 +28,7 @@ exports.getHttpClientApplicationName = function(uuid) {
  * uuid String 
  * returns inline_response_200_26
  **/
-exports.getHttpClientReleaseNumber = function(uuid) {
+exports.getHttpClientReleaseNumber = function(uuid, requestUrl) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
@@ -50,7 +50,7 @@ exports.getHttpClientReleaseNumber = function(uuid) {
  * uuid String 
  * no response value expected for this operation
  **/
-exports.putHttpClientReleaseNumber = function(body,uuid) {
+exports.putHttpClientReleaseNumber = function(body, uuid, requestUrl) {
   return new Promise(function(resolve, reject) {
     resolve();
   });

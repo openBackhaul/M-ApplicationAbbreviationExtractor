@@ -7,7 +7,7 @@
  * uuid String 
  * returns inline_response_200_24
  **/
-exports.getOperationClientDetailedLoggingIsOn = function(uuid) {
+exports.getOperationClientDetailedLoggingIsOn = function(uuid, requestUrl) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
@@ -28,7 +28,7 @@ exports.getOperationClientDetailedLoggingIsOn = function(uuid) {
  * uuid String 
  * returns inline_response_200_23
  **/
-exports.getOperationClientLifeCycleState = function(uuid) {
+exports.getOperationClientLifeCycleState = function(uuid, requestUrl) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
@@ -49,7 +49,7 @@ exports.getOperationClientLifeCycleState = function(uuid) {
  * uuid String 
  * returns inline_response_200_21
  **/
-exports.getOperationClientOperationKey = function(uuid) {
+exports.getOperationClientOperationKey = function(uuid, requestUrl) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
@@ -70,7 +70,7 @@ exports.getOperationClientOperationKey = function(uuid) {
  * uuid String 
  * returns inline_response_200_20
  **/
-exports.getOperationClientOperationName = function(uuid) {
+exports.getOperationClientOperationName = function(uuid, requestUrl) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
@@ -91,7 +91,7 @@ exports.getOperationClientOperationName = function(uuid) {
  * uuid String 
  * returns inline_response_200_22
  **/
-exports.getOperationClientOperationalState = function(uuid) {
+exports.getOperationClientOperationalState = function(uuid, requestUrl) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
@@ -113,7 +113,7 @@ exports.getOperationClientOperationalState = function(uuid) {
  * uuid String 
  * no response value expected for this operation
  **/
-exports.putOperationClientDetailedLoggingIsOn = function(body,uuid) {
+exports.putOperationClientDetailedLoggingIsOn = function(body, uuid, requestUrl) {
   return new Promise(function(resolve, reject) {
     resolve();
   });
@@ -127,7 +127,7 @@ exports.putOperationClientDetailedLoggingIsOn = function(body,uuid) {
  * uuid String 
  * no response value expected for this operation
  **/
-exports.putOperationClientOperationKey = function(body,uuid) {
+exports.putOperationClientOperationKey = function(body, uuid, requestUrl) {
   return new Promise(function(resolve, reject) {
     resolve();
   });
@@ -141,7 +141,7 @@ exports.putOperationClientOperationKey = function(body,uuid) {
  * uuid String 
  * no response value expected for this operation
  **/
-exports.putOperationClientOperationName = function(body,uuid) {
+exports.putOperationClientOperationName = function(body, uuid, requestUrl) {
   return new Promise(function(resolve, reject) {
     resolve();
   });

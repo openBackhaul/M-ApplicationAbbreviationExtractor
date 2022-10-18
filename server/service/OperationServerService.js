@@ -7,7 +7,7 @@
  * uuid String 
  * returns inline_response_200_9
  **/
-exports.getOperationServerLifeCycleState = function(uuid) {
+exports.getOperationServerLifeCycleState = function(uuid, requestUrl) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
@@ -28,7 +28,7 @@ exports.getOperationServerLifeCycleState = function(uuid) {
  * uuid String 
  * returns inline_response_200_10
  **/
-exports.getOperationServerOperationKey = function(uuid) {
+exports.getOperationServerOperationKey = function(uuid, requestUrl) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
@@ -49,7 +49,7 @@ exports.getOperationServerOperationKey = function(uuid) {
  * uuid String 
  * returns inline_response_200_8
  **/
-exports.getOperationServerOperationName = function(uuid) {
+exports.getOperationServerOperationName = function(uuid, requestUrl) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
@@ -71,7 +71,7 @@ exports.getOperationServerOperationName = function(uuid) {
  * uuid String 
  * no response value expected for this operation
  **/
-exports.putOperationServerLifeCycleState = function(body,uuid) {
+exports.putOperationServerLifeCycleState = function(body, uuid, requestUrl) {
   return new Promise(function(resolve, reject) {
     resolve();
   });
@@ -85,7 +85,7 @@ exports.putOperationServerLifeCycleState = function(body,uuid) {
  * uuid String 
  * no response value expected for this operation
  **/
-exports.putOperationServerOperationKey = function(body,uuid) {
+exports.putOperationServerOperationKey = function(body, uuid, requestUrl) {
   return new Promise(function(resolve, reject) {
     resolve();
   });

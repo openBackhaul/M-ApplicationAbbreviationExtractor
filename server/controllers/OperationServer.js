@@ -5,9 +5,10 @@ var OperationServer = require('../service/OperationServerService');
 var oamLogService = require('onf-core-model-ap/applicationPattern/services/OamLogService');
 var responseBuilder = require('onf-core-model-ap/applicationPattern/rest/server/ResponseBuilder');
 var responseCodeEnum = require('onf-core-model-ap/applicationPattern/rest/server/ResponseCode');
+var fileOperation = require('onf-core-model-ap/applicationPattern/databaseDriver/JSONDriver');
 
 module.exports.getOperationServerLifeCycleState = function getOperationServerLifeCycleState (req, res, next, uuid) {
-  OperationServer.getOperationServerLifeCycleState(uuid)
+  OperationServer.getOperationServerLifeCycleState(uuid, req.url)
     .then(function (response) {
       let responseCode = responseCodeEnum.code.OK;
       responseBuilder.buildResponse(res, responseCode, response);
@@ -21,7 +22,7 @@ module.exports.getOperationServerLifeCycleState = function getOperationServerLif
 };
 
 module.exports.getOperationServerOperationKey = function getOperationServerOperationKey (req, res, next, uuid) {
-  OperationServer.getOperationServerOperationKey(uuid)
+  OperationServer.getOperationServerOperationKey(uuid, req.url)
     .then(function (response) {
       let responseCode = responseCodeEnum.code.OK;
       responseBuilder.buildResponse(res, responseCode, response);
@@ -35,7 +36,7 @@ module.exports.getOperationServerOperationKey = function getOperationServerOpera
 };
 
 module.exports.getOperationServerOperationName = function getOperationServerOperationName (req, res, next, uuid) {
-  OperationServer.getOperationServerOperationName(uuid)
+  OperationServer.getOperationServerOperationName(uuid, req.url)
     .then(function (response) {
       let responseCode = responseCodeEnum.code.OK;
       responseBuilder.buildResponse(res, responseCode, response);
@@ -49,7 +50,7 @@ module.exports.getOperationServerOperationName = function getOperationServerOper
 };
 
 module.exports.putOperationServerLifeCycleState = function putOperationServerLifeCycleState (req, res, next, body, uuid) {
-  OperationServer.putOperationServerLifeCycleState(body, uuid)
+  OperationServer.putOperationServerLifeCycleState(body, uuid, req.url)
     .then(function (response) {
       let responseCode = responseCodeEnum.code.OK;
       responseBuilder.buildResponse(res, responseCode, response);
@@ -63,7 +64,7 @@ module.exports.putOperationServerLifeCycleState = function putOperationServerLif
 };
 
 module.exports.putOperationServerOperationKey = function putOperationServerOperationKey (req, res, next, body, uuid) {
-  OperationServer.putOperationServerOperationKey(body, uuid)
+  OperationServer.putOperationServerOperationKey(body, uuid, req.url)
     .then(function (response) {
       let responseCode = responseCodeEnum.code.OK;
       responseBuilder.buildResponse(res, responseCode, response);

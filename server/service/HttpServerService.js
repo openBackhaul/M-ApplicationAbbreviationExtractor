@@ -7,7 +7,7 @@
  * uuid String 
  * returns inline_response_200_11
  **/
-exports.getHttpServerApplicationName = function(uuid) {
+exports.getHttpServerApplicationName = function(uuid, requestUrl) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
@@ -28,7 +28,7 @@ exports.getHttpServerApplicationName = function(uuid) {
  * uuid String 
  * returns inline_response_200_13
  **/
-exports.getHttpServerApplicationPurpose = function(uuid) {
+exports.getHttpServerApplicationPurpose = function(uuid, requestUrl) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
@@ -49,7 +49,7 @@ exports.getHttpServerApplicationPurpose = function(uuid) {
  * uuid String 
  * returns inline_response_200_14
  **/
-exports.getHttpServerDataUpdatePeriode = function(uuid) {
+exports.getHttpServerDataUpdatePeriode = function(uuid, requestUrl) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
@@ -70,7 +70,7 @@ exports.getHttpServerDataUpdatePeriode = function(uuid) {
  * uuid String 
  * returns inline_response_200_16
  **/
-exports.getHttpServerOwnerEmailAddress = function(uuid) {
+exports.getHttpServerOwnerEmailAddress = function(uuid, requestUrl) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
@@ -91,7 +91,7 @@ exports.getHttpServerOwnerEmailAddress = function(uuid) {
  * uuid String 
  * returns inline_response_200_15
  **/
-exports.getHttpServerOwnerName = function(uuid) {
+exports.getHttpServerOwnerName = function(uuid, requestUrl) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
@@ -112,7 +112,7 @@ exports.getHttpServerOwnerName = function(uuid) {
  * uuid String 
  * returns inline_response_200_17
  **/
-exports.getHttpServerReleaseList = function(uuid) {
+exports.getHttpServerReleaseList = function(uuid, requestUrl) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
@@ -137,7 +137,7 @@ exports.getHttpServerReleaseList = function(uuid) {
  * uuid String 
  * returns inline_response_200_12
  **/
-exports.getHttpServerReleaseNumber = function(uuid) {
+exports.getHttpServerReleaseNumber = function(uuid, requestUrl) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
@@ -150,4 +150,3 @@ exports.getHttpServerReleaseNumber = function(uuid) {
     }
   });
 }
-
