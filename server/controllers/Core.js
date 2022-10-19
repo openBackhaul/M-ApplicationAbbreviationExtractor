@@ -1,6 +1,5 @@
 'use strict';
 
-var utils = require('../utils/writer.js');
 var Core = require('../service/CoreService');
 var oamLogService = require('onf-core-model-ap/applicationPattern/services/OamLogService');
 var responseBuilder = require('onf-core-model-ap/applicationPattern/rest/server/ResponseBuilder');
