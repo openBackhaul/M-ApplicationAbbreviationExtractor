@@ -11,7 +11,7 @@ var restResponseHeader = require('onf-core-model-ap/applicationPattern/rest/serv
 module.exports.embedYourself = function embedYourself (req, res, next, body, user, originator, xCorrelator, traceIndicator, customerJourney) {
   let startTime = process.hrtime();
 
-  BasicServices.embedYourself(body, user, originator, xCorrelator, traceIndicator, customerJourney)
+  BasicServices.embedYourself(body, user, originator, xCorrelator, traceIndicator, customerJourney, req.url)
     .then(async function (response) {
       let responseCode = responseCodeEnum.code.NO_CONTENT;
       let responseHeader = await restResponseHeader.createResponseHeader(xCorrelator, startTime, req.url);
@@ -29,7 +29,7 @@ module.exports.embedYourself = function embedYourself (req, res, next, body, use
 module.exports.endSubscription = function endSubscription (req, res, next, body, user, originator, xCorrelator, traceIndicator, customerJourney) {
   let startTime = process.hrtime();
 
-  BasicServices.endSubscription(body, user, originator, xCorrelator, traceIndicator, customerJourney)
+  BasicServices.endSubscription(body, user, originator, xCorrelator, traceIndicator, customerJourney, req.url)
     .then(async function (response) {
         let responseCode = responseCodeEnum.code.NO_CONTENT;
         let responseHeader = await restResponseHeader.createResponseHeader(xCorrelator, startTime, req.url);
@@ -47,7 +47,7 @@ module.exports.endSubscription = function endSubscription (req, res, next, body,
 module.exports.informAboutApplication = function informAboutApplication (req, res, next, user, originator, xCorrelator, traceIndicator, customerJourney) {
   let startTime = process.hrtime();
 
-  BasicServices.informAboutApplication(body, user, originator, xCorrelator, traceIndicator, customerJourney)
+  BasicServices.informAboutApplication(user, originator, xCorrelator, traceIndicator, customerJourney)
     .then(async function (response) {
         let responseCode = responseCodeEnum.code.OK;
         let responseHeader = await restResponseHeader.createResponseHeader(xCorrelator, startTime, req.url);
@@ -65,7 +65,7 @@ module.exports.informAboutApplication = function informAboutApplication (req, re
 module.exports.informAboutApplicationInGenericRepresentation = function informAboutApplicationInGenericRepresentation (req, res, next, user, originator, xCorrelator, traceIndicator, customerJourney) {
   let startTime = process.hrtime();
 
-  BasicServices.informAboutApplicationInGenericRepresentation(body, user, originator, xCorrelator, traceIndicator, customerJourney)
+  BasicServices.informAboutApplicationInGenericRepresentation(user, originator, xCorrelator, traceIndicator, customerJourney)
     .then(async function (response) {
         let responseCode = responseCodeEnum.code.OK;
         let responseHeader = await restResponseHeader.createResponseHeader(xCorrelator, startTime, req.url);
@@ -83,7 +83,7 @@ module.exports.informAboutApplicationInGenericRepresentation = function informAb
 module.exports.informAboutReleaseHistory = function informAboutReleaseHistory (req, res, next, user, originator, xCorrelator, traceIndicator, customerJourney) {
   let startTime = process.hrtime();
 
-  BasicServices.informAboutReleaseHistory(body, user, originator, xCorrelator, traceIndicator, customerJourney)
+  BasicServices.informAboutReleaseHistory(user, originator, xCorrelator, traceIndicator, customerJourney)
     .then(async function (response) {
         let responseCode = responseCodeEnum.code.OK;
         let responseHeader = await restResponseHeader.createResponseHeader(xCorrelator, startTime, req.url);
@@ -101,7 +101,7 @@ module.exports.informAboutReleaseHistory = function informAboutReleaseHistory (r
 module.exports.informAboutReleaseHistoryInGenericRepresentation = function informAboutReleaseHistoryInGenericRepresentation (req, res, next, user, originator, xCorrelator, traceIndicator, customerJourney) {
   let startTime = process.hrtime();
 
-  BasicServices.informAboutReleaseHistoryInGenericRepresentation(body, user, originator, xCorrelator, traceIndicator, customerJourney)
+  BasicServices.informAboutReleaseHistoryInGenericRepresentation(user, originator, xCorrelator, traceIndicator, customerJourney)
     .then(async function (response) {
         let responseCode = responseCodeEnum.code.OK;
         let responseHeader = await restResponseHeader.createResponseHeader(xCorrelator, startTime, req.url);
@@ -119,7 +119,7 @@ module.exports.informAboutReleaseHistoryInGenericRepresentation = function infor
 module.exports.inquireOamRequestApprovals = function inquireOamRequestApprovals (req, res, next, body, user, originator, xCorrelator, traceIndicator, customerJourney) {
   let startTime = process.hrtime();
 
-  BasicServices.inquireOamRequestApprovals(body, user, originator, xCorrelator, traceIndicator, customerJourney)
+  BasicServices.inquireOamRequestApprovals(body, user, originator, xCorrelator, traceIndicator, customerJourney, req.url)
     .then(async function (response) {
         let responseCode = responseCodeEnum.code.NO_CONTENT;
         let responseHeader = await restResponseHeader.createResponseHeader(xCorrelator, startTime, req.url);
@@ -137,7 +137,7 @@ module.exports.inquireOamRequestApprovals = function inquireOamRequestApprovals 
 module.exports.listLtpsAndFcs = function listLtpsAndFcs (req, res, next, user, originator, xCorrelator, traceIndicator, customerJourney) {
   let startTime = process.hrtime();
 
-  BasicServices.listLtpsAndFcs(body, user, originator, xCorrelator, traceIndicator, customerJourney)
+  BasicServices.listLtpsAndFcs(user, originator, xCorrelator, traceIndicator, customerJourney)
     .then(async function (response) {
         let responseCode = responseCodeEnum.code.OK;
         let responseHeader = await restResponseHeader.createResponseHeader(xCorrelator, startTime, req.url);
@@ -155,7 +155,7 @@ module.exports.listLtpsAndFcs = function listLtpsAndFcs (req, res, next, user, o
 module.exports.redirectOamRequestInformation = function redirectOamRequestInformation (req, res, next, body, user, originator, xCorrelator, traceIndicator, customerJourney) {
   let startTime = process.hrtime();
 
-  BasicServices.redirectOamRequestInformation(body, user, originator, xCorrelator, traceIndicator, customerJourney)
+  BasicServices.redirectOamRequestInformation(body, user, originator, xCorrelator, traceIndicator, customerJourney, req.url)
     .then(async function (response) {
         let responseCode = responseCodeEnum.code.NO_CONTENT;
         let responseHeader = await restResponseHeader.createResponseHeader(xCorrelator, startTime, req.url);
@@ -173,7 +173,7 @@ module.exports.redirectOamRequestInformation = function redirectOamRequestInform
 module.exports.redirectServiceRequestInformation = function redirectServiceRequestInformation (req, res, next, body, user, originator, xCorrelator, traceIndicator, customerJourney) {
   let startTime = process.hrtime();
 
-  BasicServices.redirectServiceRequestInformation(body, user, originator, xCorrelator, traceIndicator, customerJourney)
+  BasicServices.redirectServiceRequestInformation(body, user, originator, xCorrelator, traceIndicator, customerJourney, req.url)
     .then(async function (response) {
         let responseCode = responseCodeEnum.code.NO_CONTENT;
         let responseHeader = await restResponseHeader.createResponseHeader(xCorrelator, startTime, req.url);
@@ -191,7 +191,7 @@ module.exports.redirectServiceRequestInformation = function redirectServiceReque
 module.exports.redirectTopologyChangeInformation = function redirectTopologyChangeInformation (req, res, next, body, user, originator, xCorrelator, traceIndicator, customerJourney) {
   let startTime = process.hrtime();
 
-  BasicServices.redirectTopologyChangeInformation(body, user, originator, xCorrelator, traceIndicator, customerJourney)
+  BasicServices.redirectTopologyChangeInformation(body, user, originator, xCorrelator, traceIndicator, customerJourney, req.url)
     .then(async function (response) {
         let responseCode = responseCodeEnum.code.NO_CONTENT;
         let responseHeader = await restResponseHeader.createResponseHeader(xCorrelator, startTime, req.url);
@@ -209,7 +209,7 @@ module.exports.redirectTopologyChangeInformation = function redirectTopologyChan
 module.exports.registerYourself = function registerYourself (req, res, next, body, user, originator, xCorrelator, traceIndicator, customerJourney) {
   let startTime = process.hrtime();
 
-  BasicServices.registerYourself(body, user, originator, xCorrelator, traceIndicator, customerJourney)
+  BasicServices.registerYourself(body, user, originator, xCorrelator, traceIndicator, customerJourney, req.url)
     .then(async function (response) {
         let responseCode = responseCodeEnum.code.NO_CONTENT;
         let responseHeader = await restResponseHeader.createResponseHeader(xCorrelator, startTime, req.url);
@@ -227,7 +227,7 @@ module.exports.registerYourself = function registerYourself (req, res, next, bod
 module.exports.updateClient = function updateClient (req, res, next, body, user, originator, xCorrelator, traceIndicator, customerJourney) {
   let startTime = process.hrtime();
 
-  BasicServices.updateClient(body, user, originator, xCorrelator, traceIndicator, customerJourney)
+  BasicServices.updateClient(body, user, originator, xCorrelator, traceIndicator, customerJourney. req.url)
     .then(async function (response) {
         let responseCode = responseCodeEnum.code.NO_CONTENT;
         let responseHeader = await restResponseHeader.createResponseHeader(xCorrelator, startTime, req.url);
@@ -245,7 +245,7 @@ module.exports.updateClient = function updateClient (req, res, next, body, user,
 module.exports.updateOperationClient = function updateOperationClient (req, res, next, body, user, originator, xCorrelator, traceIndicator, customerJourney) {
   let startTime = process.hrtime();
 
-  BasicServices.updateOperationClient(body, user, originator, xCorrelator, traceIndicator, customerJourney)
+  BasicServices.updateOperationClient(body, user, originator, xCorrelator, traceIndicator, customerJourney, req.url)
         .then(async function (response) {
             let responseCode = responseCodeEnum.code.NO_CONTENT;
             let responseHeader = await restResponseHeader.createResponseHeader(xCorrelator, startTime, req.url);
