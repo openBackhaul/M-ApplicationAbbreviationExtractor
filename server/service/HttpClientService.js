@@ -1,5 +1,7 @@
 'use strict';
 
+var fileOperation = require('onf-core-model-ap/applicationPattern/databaseDriver/JSONDriver');
+
 
 /**
  * Returns name of application to be addressed
@@ -10,7 +12,7 @@
 exports.getHttpClientApplicationName = function(uuid, requestUrl) {
   return new Promise(async function (resolve, reject) {
     try {
-      var value = await fileOperation.readFromDatabaseAsync(url);
+      var value = await fileOperation.readFromDatabaseAsync(requestUrl);
       var response = {};
       response['application/json'] = {
         "http-client-interface-1-0:application-name": value
@@ -35,7 +37,7 @@ exports.getHttpClientApplicationName = function(uuid, requestUrl) {
 exports.getHttpClientReleaseNumber = function(uuid, requestUrl) {
   return new Promise(async function (resolve, reject) {
     try {
-      var value = await fileOperation.readFromDatabaseAsync(url);
+      var value = await fileOperation.readFromDatabaseAsync(requestUrl);
       var response = {};
       response['application/json'] = {
         "http-client-interface-1-0:release-number": value
@@ -61,7 +63,7 @@ exports.getHttpClientReleaseNumber = function(uuid, requestUrl) {
 exports.putHttpClientReleaseNumber = function(body, uuid, requestUrl) {
   return new Promise(async function (resolve, reject) {
     try {
-      await fileOperation.writeToDatabaseAsync(url, body, false);
+      await fileOperation.writeToDatabaseAsync(requestUrl, body, false);
       resolve();
     } catch (error) {}
     reject();
