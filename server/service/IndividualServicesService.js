@@ -12,7 +12,7 @@
  * customerJourney String Holds information supporting customer’s journey to which the execution applies
  * no response value expected for this operation
  **/
-exports.bequeathYourDataAndDie = function(body,user,originator,xCorrelator,traceIndicator,customerJourney) {
+exports.bequeathYourDataAndDie = function(body, user, originator, xCorrelator, traceIndicator, customerJourney, requesturl) {
   return new Promise(function(resolve, reject) {
     resolve();
   });
@@ -29,15 +29,12 @@ exports.bequeathYourDataAndDie = function(body,user,originator,xCorrelator,trace
  * customerJourney String Holds information supporting customer’s journey to which the execution applies
  * returns List
  **/
-exports.listApplications = function(user,originator,xCorrelator,traceIndicator,customerJourney) {
+exports.listApplications = function(user, originator, xCorrelator, traceIndicator, customerJourney, requesturl) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = [ {
-  "application-name" : "RegistryOffice",
-  "application-name-abbreviation" : "RO"
-}, {
-  "application-name" : "AdministratorAdministration",
-  "application-name-abbreviation" : "AA"
+  "application-name" : "ApplicationAbbreviationExtractor",
+  "application-name-abbreviation" : "AAE"
 } ];
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
@@ -58,7 +55,7 @@ exports.listApplications = function(user,originator,xCorrelator,traceIndicator,c
  * customerJourney String Holds information supporting customer’s journey to which the execution applies
  * returns inline_response_200_1
  **/
-exports.startApplicationInGenericRepresentation = function(user,originator,xCorrelator,traceIndicator,customerJourney) {
+exports.startApplicationInGenericRepresentation = function(user, originator, xCorrelator, traceIndicator, customerJourney, requesturl) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
@@ -69,7 +66,7 @@ exports.startApplicationInGenericRepresentation = function(user,originator,xCorr
   } ],
   "response-value-list" : [ {
     "field-name" : "applicationName",
-    "value" : "OwnApplicationName",
+    "value" : "ApplicationAbbreviationExtractor",
     "datatype" : "string"
   } ]
 };
@@ -80,4 +77,3 @@ exports.startApplicationInGenericRepresentation = function(user,originator,xCorr
     }
   });
 }
-
