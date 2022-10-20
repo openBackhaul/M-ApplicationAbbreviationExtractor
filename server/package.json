@@ -18,5 +18,8 @@
     "oas3-tools": "^2.2.3",
     "onf-core-model-ap": "1.0.0",
     "onf-core-model-ap-bs": "1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.25.0"
   }
 }

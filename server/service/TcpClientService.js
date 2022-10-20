@@ -7,7 +7,7 @@
  * uuid String 
  * returns inline_response_200_27
  **/
-exports.getTcpClientRemoteAddress = function(uuid) {
+exports.getTcpClientRemoteAddress = function(uuid, requestUrl) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
@@ -34,7 +34,7 @@ exports.getTcpClientRemoteAddress = function(uuid) {
  * returns inline_response_200_28
  **/
 exports.getTcpClientRemotePort = function(uuid) {
-  return new Promise(function(resolve, reject) {
+  return new Promise(function(resolve, reject, requestUrl) {
     var examples = {};
     examples['application/json'] = {
   "tcp-client-interface-1-0:remote-port" : 1000
@@ -55,7 +55,7 @@ exports.getTcpClientRemotePort = function(uuid) {
  * uuid String 
  * no response value expected for this operation
  **/
-exports.putTcpClientRemoteAddress = function(body,uuid) {
+exports.putTcpClientRemoteAddress = function(body, uuid, requestUrl) {
   return new Promise(function(resolve, reject) {
     resolve();
   });
@@ -69,7 +69,7 @@ exports.putTcpClientRemoteAddress = function(body,uuid) {
  * uuid String 
  * no response value expected for this operation
  **/
-exports.putTcpClientRemotePort = function(body,uuid) {
+exports.putTcpClientRemotePort = function(body, uuid, requestUrl) {
   return new Promise(function(resolve, reject) {
     resolve();
   });

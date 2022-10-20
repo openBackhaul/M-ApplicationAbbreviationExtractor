@@ -6,7 +6,7 @@
  *
  * returns inline_response_200_7
  **/
-exports.getControlConstruct = function() {
+exports.getControlConstruct = function(requestUrl) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
