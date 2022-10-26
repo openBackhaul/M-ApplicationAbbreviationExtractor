@@ -395,7 +395,7 @@
                 ]
             },
             {
-                "uuid": "aae-1-0-0-op-s-im-3001",
+                "uuid": "aae-1-0-0-op-s-im-001",
                 "ltp-direction": "core-model-1-4:TERMINATION_DIRECTION_SOURCE",
                 "client-ltp": [],
                 "server-ltp": [
@@ -438,7 +438,7 @@
                     "aae-1-0-0-op-s-bs-003",
                     "aae-1-0-0-op-s-bs-004",
                     "aae-1-0-0-op-s-is-000",
-                    "aae-1-0-0-op-s-im-3001"
+                    "aae-1-0-0-op-s-im-001"
                 ],
                 "server-ltp": [
                     "aae-1-0-0-tcp-s-bm-000"
