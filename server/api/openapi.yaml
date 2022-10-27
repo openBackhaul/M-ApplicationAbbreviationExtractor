@@ -101,7 +101,7 @@ paths:
                 example: 850
             life-cycle-state:
               description: |
-                'Life cycle state of the consumed service find in [/core-model-1-4:control-construct/logical-termination-point=aae-1-0-0-op-s-is-3001/layer-protocol=0/operation-server-interface-1-0:operation-server-interface-pac/operation-server-interface-configuration/life-cycle-state]'
+                'Life cycle state of the consumed service find in [/core-model-1-4:control-construct/logical-termination-point=aae-1-0-0-op-s-is-001/layer-protocol=0/operation-server-interface-1-0:operation-server-interface-pac/operation-server-interface-configuration/life-cycle-state]'
               style: simple
               explode: false
               schema:
