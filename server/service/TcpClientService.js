@@ -5,16 +5,15 @@
  * Returns remote address
  *
  * uuid String 
- * returns inline_response_200_27
+ * returns inline_response_200_59
  **/
-exports.getTcpClientRemoteAddress = function(uuid, requestUrl) {
+exports.getTcpClientRemoteAddress = function(uuid) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
   "tcp-client-interface-1-0:remote-address" : {
-    "domain-name" : "application-pattern.mw-domain.transport.ger.telefonica.com",
     "ip-address" : {
-      "ipv-4-address" : "10.118.125.157"
+      "ipv-4-address" : "1.1.4.1"
     }
   }
 };
@@ -31,13 +30,34 @@ exports.getTcpClientRemoteAddress = function(uuid, requestUrl) {
  * Returns target TCP port at server
  *
  * uuid String 
- * returns inline_response_200_28
+ * returns inline_response_200_60
  **/
 exports.getTcpClientRemotePort = function(uuid) {
-  return new Promise(function(resolve, reject, requestUrl) {
+  return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
   "tcp-client-interface-1-0:remote-port" : 1000
+};
+    if (Object.keys(examples).length > 0) {
+      resolve(examples[Object.keys(examples)[0]]);
+    } else {
+      resolve();
+    }
+  });
+}
+
+
+/**
+ * Returns protocol for addressing remote side
+ *
+ * uuid String 
+ * returns inline_response_200_58
+ **/
+exports.getTcpClientRemoteProtocol = function(uuid) {
+  return new Promise(function(resolve, reject) {
+    var examples = {};
+    examples['application/json'] = {
+  "tcp-client-interface-1-0:remote-protocol" : "tcp-client-interface-1-0:PROTOCOL_TYPE_HTTP"
 };
     if (Object.keys(examples).length > 0) {
       resolve(examples[Object.keys(examples)[0]]);
@@ -55,7 +75,7 @@ exports.getTcpClientRemotePort = function(uuid) {
  * uuid String 
  * no response value expected for this operation
  **/
-exports.putTcpClientRemoteAddress = function(body, uuid, requestUrl) {
+exports.putTcpClientRemoteAddress = function(body,uuid) {
   return new Promise(function(resolve, reject) {
     resolve();
   });
@@ -69,7 +89,21 @@ exports.putTcpClientRemoteAddress = function(body, uuid, requestUrl) {
  * uuid String 
  * no response value expected for this operation
  **/
-exports.putTcpClientRemotePort = function(body, uuid, requestUrl) {
+exports.putTcpClientRemotePort = function(body,uuid) {
+  return new Promise(function(resolve, reject) {
+    resolve();
+  });
+}
+
+
+/**
+ * Configures protocol for addressing remote side
+ *
+ * body Tcpclientinterfaceconfiguration_remoteprotocol_body 
+ * uuid String 
+ * no response value expected for this operation
+ **/
+exports.putTcpClientRemoteProtocol = function(body,uuid) {
   return new Promise(function(resolve, reject) {
     resolve();
   });

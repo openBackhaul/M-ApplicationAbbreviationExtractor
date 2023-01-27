@@ -6,7 +6,7 @@
  *
  * body V1_embedyourself_body 
  * user String User identifier from the system starting the service call
- * originator String 'Identification for the system consuming the API, as defined in  [/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-capability/application-name]' 
+ * originator String 'Identification for the system consuming the API, as defined in  [/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/application-name]' 
  * xCorrelator String UUID for the service execution flow that allows to correlate requests and responses
  * traceIndicator String Sequence of request numbers along the flow
  * customerJourney String Holds information supporting customer’s journey to which the execution applies
@@ -24,7 +24,7 @@ exports.embedYourself = function(body,user,originator,xCorrelator,traceIndicator
  *
  * body V1_endsubscription_body 
  * user String User identifier from the system starting the service call
- * originator String 'Identification for the system consuming the API, as defined in  [/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-capability/application-name]' 
+ * originator String 'Identification for the system consuming the API, as defined in  [/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/application-name]' 
  * xCorrelator String UUID for the service execution flow that allows to correlate requests and responses
  * traceIndicator String Sequence of request numbers along the flow
  * customerJourney String Holds information supporting customer’s journey to which the execution applies
@@ -41,7 +41,7 @@ exports.endSubscription = function(body,user,originator,xCorrelator,traceIndicat
  * Returns administrative information
  *
  * user String User identifier from the system starting the service call
- * originator String 'Identification for the system consuming the API, as defined in  [/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-capability/application-name]' 
+ * originator String 'Identification for the system consuming the API, as defined in  [/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/application-name]' 
  * xCorrelator String UUID for the service execution flow that allows to correlate requests and responses
  * traceIndicator String Sequence of request numbers along the flow
  * customerJourney String Holds information supporting customer’s journey to which the execution applies
@@ -52,7 +52,7 @@ exports.informAboutApplication = function(user,originator,xCorrelator,traceIndic
     var examples = {};
     examples['application/json'] = {
   "application-name" : "OwnApplicationName",
-  "application-release-number" : "1.0.0",
+  "release-number" : "1.0.0",
   "application-purpose" : "Brief description of the purpose of the application.",
   "data-update-period" : "real-time",
   "owner-name" : "Thorsten Heinze",
@@ -71,49 +71,47 @@ exports.informAboutApplication = function(user,originator,xCorrelator,traceIndic
  * Returns administrative information for generic representation
  *
  * user String User identifier from the system starting the service call
- * originator String 'Identification for the system consuming the API, as defined in  [/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-capability/application-name]' 
+ * originator String 'Identification for the system consuming the API, as defined in  [/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/application-name]' 
  * xCorrelator String UUID for the service execution flow that allows to correlate requests and responses
  * traceIndicator String Sequence of request numbers along the flow
  * customerJourney String Holds information supporting customer’s journey to which the execution applies
- * returns inline_response_200_4
+ * returns genericRepresentation
  **/
 exports.informAboutApplicationInGenericRepresentation = function(user,originator,xCorrelator,traceIndicator,customerJourney) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
   "consequent-action-list" : [ {
-    "label" : "Release History",
-    "request" : "https://10.118.125.157:1000/v1/inform-about-release-history-in-generic-representation",
-    "display-in-new-browser-window" : false
+    "request" : "request",
+    "input-value-list" : [ {
+      "field-name" : "field-name",
+      "unit" : "unit"
+    }, {
+      "field-name" : "field-name",
+      "unit" : "unit"
+    } ],
+    "display-in-new-browser-window" : true,
+    "label" : "label"
   }, {
-    "label" : "API Documentation",
-    "request" : "https://10.118.125.157:1000/docs",
-    "display-in-new-browser-window" : true
+    "request" : "request",
+    "input-value-list" : [ {
+      "field-name" : "field-name",
+      "unit" : "unit"
+    }, {
+      "field-name" : "field-name",
+      "unit" : "unit"
+    } ],
+    "display-in-new-browser-window" : true,
+    "label" : "label"
   } ],
   "response-value-list" : [ {
-    "field-name" : "applicationName",
-    "value" : "OwnApplicationName",
-    "datatype" : "string"
+    "field-name" : "field-name",
+    "datatype" : "datatype",
+    "value" : "value"
   }, {
-    "field-name" : "releaseNumber",
-    "value" : "1.0.0",
-    "datatype" : "string"
-  }, {
-    "field-name" : "applicationPurpose",
-    "value" : "Brief description of the purpose of the application.",
-    "datatype" : "string"
-  }, {
-    "field-name" : "dataUpdatePeriod",
-    "value" : "real-time",
-    "datatype" : "string"
-  }, {
-    "field-name" : "ownerName",
-    "value" : "Thorsten Heinze",
-    "datatype" : "string"
-  }, {
-    "field-name" : "ownerEmailAddress",
-    "value" : "Thorsten.Heinze@telefonica.com",
-    "datatype" : "string"
+    "field-name" : "field-name",
+    "datatype" : "datatype",
+    "value" : "value"
   } ]
 };
     if (Object.keys(examples).length > 0) {
@@ -129,7 +127,7 @@ exports.informAboutApplicationInGenericRepresentation = function(user,originator
  * Returns release history
  *
  * user String User identifier from the system starting the service call
- * originator String 'Identification for the system consuming the API, as defined in  [/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-capability/application-name]' 
+ * originator String 'Identification for the system consuming the API, as defined in  [/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/application-name]' 
  * xCorrelator String UUID for the service execution flow that allows to correlate requests and responses
  * traceIndicator String Sequence of request numbers along the flow
  * customerJourney String Holds information supporting customer’s journey to which the execution applies
@@ -156,11 +154,11 @@ exports.informAboutReleaseHistory = function(user,originator,xCorrelator,traceIn
  * Returns release history for generic representation
  *
  * user String User identifier from the system starting the service call
- * originator String 'Identification for the system consuming the API, as defined in  [/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-capability/application-name]' 
+ * originator String 'Identification for the system consuming the API, as defined in  [/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/application-name]' 
  * xCorrelator String UUID for the service execution flow that allows to correlate requests and responses
  * traceIndicator String Sequence of request numbers along the flow
  * customerJourney String Holds information supporting customer’s journey to which the execution applies
- * returns inline_response_200_6
+ * returns genericRepresentation
  **/
 exports.informAboutReleaseHistoryInGenericRepresentation = function(user,originator,xCorrelator,traceIndicator,customerJourney) {
   return new Promise(function(resolve, reject) {
@@ -190,9 +188,13 @@ exports.informAboutReleaseHistoryInGenericRepresentation = function(user,origina
     "label" : "label"
   } ],
   "response-value-list" : [ {
-    "field-name" : "1.0.0",
-    "value" : "20.11.2010 - Initial version.",
-    "datatype" : "string"
+    "field-name" : "field-name",
+    "datatype" : "datatype",
+    "value" : "value"
+  }, {
+    "field-name" : "field-name",
+    "datatype" : "datatype",
+    "value" : "value"
   } ]
 };
     if (Object.keys(examples).length > 0) {
@@ -209,7 +211,7 @@ exports.informAboutReleaseHistoryInGenericRepresentation = function(user,origina
  *
  * body V1_inquireoamrequestapprovals_body 
  * user String User identifier from the system starting the service call
- * originator String 'Identification for the system consuming the API, as defined in  [/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-capability/application-name]' 
+ * originator String 'Identification for the system consuming the API, as defined in  [/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/application-name]' 
  * xCorrelator String UUID for the service execution flow that allows to correlate requests and responses
  * traceIndicator String Sequence of request numbers along the flow
  * customerJourney String Holds information supporting customer’s journey to which the execution applies
@@ -226,11 +228,11 @@ exports.inquireOamRequestApprovals = function(body,user,originator,xCorrelator,t
  * Allows retrieving all interface and internal connection data
  *
  * user String User identifier from the system starting the service call
- * originator String 'Identification for the system consuming the API, as defined in  [/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-capability/application-name]' 
+ * originator String 'Identification for the system consuming the API, as defined in  [/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/application-name]' 
  * xCorrelator String UUID for the service execution flow that allows to correlate requests and responses
  * traceIndicator String Sequence of request numbers along the flow
  * customerJourney String Holds information supporting customer’s journey to which the execution applies
- * returns inline_response_200_2
+ * returns inline_response_200_1
  **/
 exports.listLtpsAndFcs = function(user,originator,xCorrelator,traceIndicator,customerJourney) {
   return new Promise(function(resolve, reject) {
@@ -238,9 +240,9 @@ exports.listLtpsAndFcs = function(user,originator,xCorrelator,traceIndicator,cus
     examples['application/json'] = {
   "core-model-1-4:control-construct" : {
     "forwarding-domain" : [ {
-      "uuid" : "ro-1-0-0-op-fd-000",
+      "uuid" : "ro-2-0-1-op-fd-000",
       "forwarding-construct" : [ {
-        "uuid" : "ro-1-0-0-op-fc-bm-000",
+        "uuid" : "ro-2-0-1-op-fc-bm-000",
         "name" : [ {
           "value-name" : "ForwardingKind",
           "value" : "core-model-1-4:FORWARDING_KIND_TYPE_INVARIANT_PROCESS_SNIPPET"
@@ -251,14 +253,14 @@ exports.listLtpsAndFcs = function(user,originator,xCorrelator,traceIndicator,cus
         "fc-port" : [ {
           "local-id" : "000",
           "port-direction" : "core-model-1-4:PORT_DIRECTION_TYPE_MANAGEMENT",
-          "logical-termination-point" : "ro-1-0-0-op-s-bm-000"
+          "logical-termination-point" : "ro-2-0-1-op-s-bm-000"
         }, {
           "local-id" : "100",
           "port-direction" : "core-model-1-4:PORT_DIRECTION_TYPE_INPUT",
-          "logical-termination-point" : "ro-1-0-0-op-s-bm-000"
+          "logical-termination-point" : "ro-2-0-1-op-s-bm-000"
         } ]
       }, {
-        "uuid" : "ro-1-0-0-op-fc-bm-001",
+        "uuid" : "ro-2-0-1-op-fc-bm-001",
         "name" : [ {
           "value-name" : "ForwardingKind",
           "value" : "core-model-1-4:FORWARDING_KIND_TYPE_INVARIANT_PROCESS_SNIPPET"
@@ -269,19 +271,19 @@ exports.listLtpsAndFcs = function(user,originator,xCorrelator,traceIndicator,cus
         "fc-port" : [ {
           "local-id" : "100",
           "port-direction" : "core-model-1-4:PORT_DIRECTION_TYPE_INPUT",
-          "logical-termination-point" : "ro-1-0-0-op-s-bm-001"
+          "logical-termination-point" : "ro-2-0-1-op-s-bm-001"
         }, {
           "local-id" : "200",
           "port-direction" : "core-model-1-4:PORT_DIRECTION_TYPE_OUTPUT",
-          "logical-termination-point" : "ro-1-0-0-op-c-bm-ro-1-0-0-000"
+          "logical-termination-point" : "ro-2-0-1-op-c-bm-ro-2-0-1-000"
         } ]
       } ]
     } ],
     "logical-termination-point" : [ {
-      "uuid" : "ro-1-0-0-op-s-bm-000",
+      "uuid" : "ro-2-0-1-op-s-bm-000",
       "ltp-direction" : "core-model-1-4:TERMINATION_DIRECTION_SOURCE",
       "client-ltp" : [ ],
-      "server-ltp" : [ "ro-1-0-0-http-s-bm-000" ],
+      "server-ltp" : [ "ro-2-0-1-http-s-000" ],
       "layer-protocol" : [ {
         "local-id" : "0",
         "layer-protocol-name" : "operation-server-interface-1-0:LAYER_PROTOCOL_NAME_TYPE_OPERATION_LAYER",
@@ -295,9 +297,9 @@ exports.listLtpsAndFcs = function(user,originator,xCorrelator,traceIndicator,cus
         }
       } ]
     }, {
-      "uuid" : "ro-1-0-0-http-s-bm-000",
+      "uuid" : "ro-2-0-1-http-s-000",
       "ltp-direction" : "core-model-1-4:TERMINATION_DIRECTION_SOURCE",
-      "client-ltp" : [ "ro-1-0-0-op-s-bm-000" ],
+      "client-ltp" : [ "ro-2-0-1-op-s-bm-000" ],
       "server-ltp" : [ ],
       "layer-protocol" : [ {
         "local-id" : "0",
@@ -305,7 +307,7 @@ exports.listLtpsAndFcs = function(user,originator,xCorrelator,traceIndicator,cus
         "http-server-interface-1-0:http-server-interface-pac" : {
           "http-server-interface-capability" : {
             "application-name" : "RegistryOffice",
-            "release-number" : "1.0.0",
+            "release-number" : "2.0.1",
             "data-update-period" : "http-server-interface-1-0:DATA_UPDATE_PERIOD_TYPE_REAL_TIME"
           }
         }
@@ -328,7 +330,7 @@ exports.listLtpsAndFcs = function(user,originator,xCorrelator,traceIndicator,cus
  *
  * body V1_redirectoamrequestinformation_body 
  * user String User identifier from the system starting the service call
- * originator String 'Identification for the system consuming the API, as defined in  [/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-capability/application-name]' 
+ * originator String 'Identification for the system consuming the API, as defined in  [/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/application-name]' 
  * xCorrelator String UUID for the service execution flow that allows to correlate requests and responses
  * traceIndicator String Sequence of request numbers along the flow
  * customerJourney String Holds information supporting customer’s journey to which the execution applies
@@ -346,7 +348,7 @@ exports.redirectOamRequestInformation = function(body,user,originator,xCorrelato
  *
  * body V1_redirectservicerequestinformation_body 
  * user String User identifier from the system starting the service call
- * originator String 'Identification for the system consuming the API, as defined in  [/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-capability/application-name]' 
+ * originator String 'Identification for the system consuming the API, as defined in  [/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/application-name]' 
  * xCorrelator String UUID for the service execution flow that allows to correlate requests and responses
  * traceIndicator String Sequence of request numbers along the flow
  * customerJourney String Holds information supporting customer’s journey to which the execution applies
@@ -360,19 +362,103 @@ exports.redirectServiceRequestInformation = function(body,user,originator,xCorre
 
 
 /**
- * Offers configuring client side for sending information about topology changes
+ * Offers configuring client side for sending information about topology changes and provides current data tree
  *
  * body V1_redirecttopologychangeinformation_body 
  * user String User identifier from the system starting the service call
- * originator String 'Identification for the system consuming the API, as defined in  [/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-capability/application-name]' 
+ * originator String 'Identification for the system consuming the API, as defined in  [/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/application-name]' 
  * xCorrelator String UUID for the service execution flow that allows to correlate requests and responses
  * traceIndicator String Sequence of request numbers along the flow
  * customerJourney String Holds information supporting customer’s journey to which the execution applies
- * no response value expected for this operation
+ * returns inline_response_200_2
  **/
 exports.redirectTopologyChangeInformation = function(body,user,originator,xCorrelator,traceIndicator,customerJourney) {
   return new Promise(function(resolve, reject) {
-    resolve();
+    var examples = {};
+    examples['application/json'] = {
+  "core-model-1-4:control-construct" : {
+    "forwarding-domain" : [ {
+      "uuid" : "ro-2-0-1-op-fd-000",
+      "forwarding-construct" : [ {
+        "uuid" : "ro-2-0-1-op-fc-bm-000",
+        "name" : [ {
+          "value-name" : "ForwardingKind",
+          "value" : "core-model-1-4:FORWARDING_KIND_TYPE_INVARIANT_PROCESS_SNIPPET"
+        }, {
+          "value-name" : "ForwardingName",
+          "value" : "PromptForRegisteringCausesRegistrationRequest"
+        } ],
+        "fc-port" : [ {
+          "local-id" : "000",
+          "port-direction" : "core-model-1-4:PORT_DIRECTION_TYPE_MANAGEMENT",
+          "logical-termination-point" : "ro-2-0-1-op-s-bm-000"
+        }, {
+          "local-id" : "100",
+          "port-direction" : "core-model-1-4:PORT_DIRECTION_TYPE_INPUT",
+          "logical-termination-point" : "ro-2-0-1-op-s-bm-000"
+        } ]
+      }, {
+        "uuid" : "ro-2-0-1-op-fc-bm-001",
+        "name" : [ {
+          "value-name" : "ForwardingKind",
+          "value" : "core-model-1-4:FORWARDING_KIND_TYPE_INVARIANT_PROCESS_SNIPPET"
+        }, {
+          "value-name" : "ForwardingName",
+          "value" : "PromptForEmbeddingCausesRequestForBequeathingData"
+        } ],
+        "fc-port" : [ {
+          "local-id" : "100",
+          "port-direction" : "core-model-1-4:PORT_DIRECTION_TYPE_INPUT",
+          "logical-termination-point" : "ro-2-0-1-op-s-bm-001"
+        }, {
+          "local-id" : "200",
+          "port-direction" : "core-model-1-4:PORT_DIRECTION_TYPE_OUTPUT",
+          "logical-termination-point" : "ro-2-0-1-op-c-bm-ro-2-0-1-000"
+        } ]
+      } ]
+    } ],
+    "logical-termination-point" : [ {
+      "uuid" : "ro-2-0-1-op-s-bm-000",
+      "ltp-direction" : "core-model-1-4:TERMINATION_DIRECTION_SOURCE",
+      "client-ltp" : [ ],
+      "server-ltp" : [ "ro-2-0-1-http-s-000" ],
+      "layer-protocol" : [ {
+        "local-id" : "0",
+        "layer-protocol-name" : "operation-server-interface-1-0:LAYER_PROTOCOL_NAME_TYPE_OPERATION_LAYER",
+        "operation-server-interface-1-0:operation-server-interface-pac" : {
+          "operation-server-interface-capability" : {
+            "operation-name" : "/v1/register-yourself"
+          },
+          "operation-server-interface-configuration" : {
+            "life-cycle-state" : "operation-server-interface-1-0:LIFE_CYCLE_STATE_TYPE_EXPERIMENTAL"
+          }
+        }
+      } ]
+    }, {
+      "uuid" : "ro-2-0-1-http-s-000",
+      "ltp-direction" : "core-model-1-4:TERMINATION_DIRECTION_SOURCE",
+      "client-ltp" : [ "ro-2-0-1-op-s-bm-000" ],
+      "server-ltp" : [ ],
+      "layer-protocol" : [ {
+        "local-id" : "0",
+        "layer-protocol-name" : "http-server-interface-1-0:LAYER_PROTOCOL_NAME_TYPE_HTTP_LAYER",
+        "http-server-interface-1-0:http-server-interface-pac" : {
+          "http-server-interface-capability" : {
+            "application-name" : "RegistryOffice",
+            "release-number" : "2.0.1",
+            "data-update-period" : "http-server-interface-1-0:DATA_UPDATE_PERIOD_TYPE_REAL_TIME"
+          }
+        }
+      } ]
+    } ],
+    "uuid" : "uuid"
+  }
+};
+    if (Object.keys(examples).length > 0) {
+      resolve(examples[Object.keys(examples)[0]]);
+    } else {
+      resolve();
+    }
   });
 }
 
@@ -381,9 +467,9 @@ exports.redirectTopologyChangeInformation = function(body,user,originator,xCorre
  * Initiates registering at the currently active RegistryOffice
  * Shall also automatically execute without receiving any request every time the application starts
  *
- * body V1_registeryourself_body  (optional)
+ * body V1_registeryourself_body 
  * user String User identifier from the system starting the service call
- * originator String 'Identification for the system consuming the API, as defined in  [/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-capability/application-name]' 
+ * originator String 'Identification for the system consuming the API, as defined in  [/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/application-name]' 
  * xCorrelator String UUID for the service execution flow that allows to correlate requests and responses
  * traceIndicator String Sequence of request numbers along the flow
  * customerJourney String Holds information supporting customer’s journey to which the execution applies
@@ -397,11 +483,68 @@ exports.registerYourself = function(body,user,originator,xCorrelator,traceIndica
 
 
 /**
+ * Starts application in generic representation
+ *
+ * user String User identifier from the system starting the service call
+ * originator String 'Identification for the system consuming the API, as defined in  [/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/application-name]' 
+ * xCorrelator String UUID for the service execution flow that allows to correlate requests and responses
+ * traceIndicator String Sequence of request numbers along the flow
+ * customerJourney String Holds information supporting customer’s journey to which the execution applies
+ * returns genericRepresentation
+ **/
+exports.startApplicationInGenericRepresentation = function(user,originator,xCorrelator,traceIndicator,customerJourney) {
+  return new Promise(function(resolve, reject) {
+    var examples = {};
+    examples['application/json'] = {
+  "consequent-action-list" : [ {
+    "request" : "request",
+    "input-value-list" : [ {
+      "field-name" : "field-name",
+      "unit" : "unit"
+    }, {
+      "field-name" : "field-name",
+      "unit" : "unit"
+    } ],
+    "display-in-new-browser-window" : true,
+    "label" : "label"
+  }, {
+    "request" : "request",
+    "input-value-list" : [ {
+      "field-name" : "field-name",
+      "unit" : "unit"
+    }, {
+      "field-name" : "field-name",
+      "unit" : "unit"
+    } ],
+    "display-in-new-browser-window" : true,
+    "label" : "label"
+  } ],
+  "response-value-list" : [ {
+    "field-name" : "field-name",
+    "datatype" : "datatype",
+    "value" : "value"
+  }, {
+    "field-name" : "field-name",
+    "datatype" : "datatype",
+    "value" : "value"
+  } ]
+};
+    if (Object.keys(examples).length > 0) {
+      resolve(examples[Object.keys(examples)[0]]);
+    } else {
+      resolve();
+    }
+  });
+}
+
+
+/**
  * Allows updating connection data of a serving application
+ * 'Initiates update of release number and TCP/IP address at existing HttpClients and TcpClients. If combination of {future-application-name, future-release-number} is different from combination {current-application-name, current-release-number} and if HttpClient with combination of {future-application-name, future-release-number} already exists, HttpClient with combination {current-application-name, current-release-number} shall not be updated, but OperationClients shall be transferred to the HttpClient with combination of {future-application-name, future-release-number}.' 
  *
  * body V1_updateclient_body 
  * user String User identifier from the system starting the service call
- * originator String 'Identification for the system consuming the API, as defined in  [/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-capability/application-name]' 
+ * originator String 'Identification for the system consuming the API, as defined in  [/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/application-name]' 
  * xCorrelator String UUID for the service execution flow that allows to correlate requests and responses
  * traceIndicator String Sequence of request numbers along the flow
  * customerJourney String Holds information supporting customer’s journey to which the execution applies
@@ -419,7 +562,7 @@ exports.updateClient = function(body,user,originator,xCorrelator,traceIndicator,
  *
  * body V1_updateoperationclient_body 
  * user String User identifier from the system starting the service call
- * originator String 'Identification for the system consuming the API, as defined in  [/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-capability/application-name]' 
+ * originator String 'Identification for the system consuming the API, as defined in  [/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/application-name]' 
  * xCorrelator String UUID for the service execution flow that allows to correlate requests and responses
  * traceIndicator String Sequence of request numbers along the flow
  * customerJourney String Holds information supporting customer’s journey to which the execution applies
@@ -437,7 +580,7 @@ exports.updateOperationClient = function(body,user,originator,xCorrelator,traceI
  *
  * body V1_updateoperationkey_body 
  * user String User identifier from the system starting the service call
- * originator String 'Identification for the system consuming the API, as defined in  [/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-capability/application-name]' 
+ * originator String 'Identification for the system consuming the API, as defined in  [/core-model-1-4:control-construct/logical-termination-point={uuid}/layer-protocol=0/http-client-interface-1-0:http-client-interface-pac/http-client-interface-configuration/application-name]' 
  * xCorrelator String UUID for the service execution flow that allows to correlate requests and responses
  * traceIndicator String Sequence of request numbers along the flow
  * customerJourney String Holds information supporting customer’s journey to which the execution applies

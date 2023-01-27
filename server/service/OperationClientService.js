@@ -5,9 +5,9 @@
  * Returns detailed logging configuration.
  *
  * uuid String 
- * returns inline_response_200_24
+ * returns inline_response_200_50
  **/
-exports.getOperationClientDetailedLoggingIsOn = function(uuid, requestUrl) {
+exports.getOperationClientDetailedLoggingIsOn = function(uuid) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
@@ -26,9 +26,9 @@ exports.getOperationClientDetailedLoggingIsOn = function(uuid, requestUrl) {
  * Returns life cycle state of the operation
  *
  * uuid String 
- * returns inline_response_200_23
+ * returns inline_response_200_49
  **/
-exports.getOperationClientLifeCycleState = function(uuid, requestUrl) {
+exports.getOperationClientLifeCycleState = function(uuid) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
@@ -47,9 +47,9 @@ exports.getOperationClientLifeCycleState = function(uuid, requestUrl) {
  * Returns key used for connecting to server.
  *
  * uuid String 
- * returns inline_response_200_21
+ * returns inline_response_200_47
  **/
-exports.getOperationClientOperationKey = function(uuid, requestUrl) {
+exports.getOperationClientOperationKey = function(uuid) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
@@ -68,9 +68,9 @@ exports.getOperationClientOperationKey = function(uuid, requestUrl) {
  * Returns operation name
  *
  * uuid String 
- * returns inline_response_200_20
+ * returns inline_response_200_46
  **/
-exports.getOperationClientOperationName = function(uuid, requestUrl) {
+exports.getOperationClientOperationName = function(uuid) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
@@ -89,9 +89,9 @@ exports.getOperationClientOperationName = function(uuid, requestUrl) {
  * Returns operational state of the operation
  *
  * uuid String 
- * returns inline_response_200_22
+ * returns inline_response_200_48
  **/
-exports.getOperationClientOperationalState = function(uuid, requestUrl) {
+exports.getOperationClientOperationalState = function(uuid) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
@@ -113,7 +113,7 @@ exports.getOperationClientOperationalState = function(uuid, requestUrl) {
  * uuid String 
  * no response value expected for this operation
  **/
-exports.putOperationClientDetailedLoggingIsOn = function(body, uuid, requestUrl) {
+exports.putOperationClientDetailedLoggingIsOn = function(body,uuid) {
   return new Promise(function(resolve, reject) {
     resolve();
   });
@@ -127,7 +127,7 @@ exports.putOperationClientDetailedLoggingIsOn = function(body, uuid, requestUrl)
  * uuid String 
  * no response value expected for this operation
  **/
-exports.putOperationClientOperationKey = function(body, uuid, requestUrl) {
+exports.putOperationClientOperationKey = function(body,uuid) {
   return new Promise(function(resolve, reject) {
     resolve();
   });
@@ -141,7 +141,7 @@ exports.putOperationClientOperationKey = function(body, uuid, requestUrl) {
  * uuid String 
  * no response value expected for this operation
  **/
-exports.putOperationClientOperationName = function(body, uuid, requestUrl) {
+exports.putOperationClientOperationName = function(body,uuid) {
   return new Promise(function(resolve, reject) {
     resolve();
   });

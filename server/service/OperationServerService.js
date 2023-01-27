@@ -5,9 +5,9 @@
  * Returns the configured life cycle state of the operation
  *
  * uuid String 
- * returns inline_response_200_9
+ * returns inline_response_200_33
  **/
-exports.getOperationServerLifeCycleState = function(uuid, requestUrl) {
+exports.getOperationServerLifeCycleState = function(uuid) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
@@ -26,9 +26,9 @@ exports.getOperationServerLifeCycleState = function(uuid, requestUrl) {
  * Returns key for connecting
  *
  * uuid String 
- * returns inline_response_200_10
+ * returns inline_response_200_34
  **/
-exports.getOperationServerOperationKey = function(uuid, requestUrl) {
+exports.getOperationServerOperationKey = function(uuid) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
@@ -47,9 +47,9 @@ exports.getOperationServerOperationKey = function(uuid, requestUrl) {
  * Returns operation name
  *
  * uuid String 
- * returns inline_response_200_8
+ * returns inline_response_200_32
  **/
-exports.getOperationServerOperationName = function(uuid, requestUrl) {
+exports.getOperationServerOperationName = function(uuid) {
   return new Promise(function(resolve, reject) {
     var examples = {};
     examples['application/json'] = {
@@ -71,7 +71,7 @@ exports.getOperationServerOperationName = function(uuid, requestUrl) {
  * uuid String 
  * no response value expected for this operation
  **/
-exports.putOperationServerLifeCycleState = function(body, uuid, requestUrl) {
+exports.putOperationServerLifeCycleState = function(body,uuid) {
   return new Promise(function(resolve, reject) {
     resolve();
   });
@@ -85,7 +85,7 @@ exports.putOperationServerLifeCycleState = function(body, uuid, requestUrl) {
  * uuid String 
  * no response value expected for this operation
  **/
-exports.putOperationServerOperationKey = function(body, uuid, requestUrl) {
+exports.putOperationServerOperationKey = function(body,uuid) {
   return new Promise(function(resolve, reject) {
     resolve();
   });

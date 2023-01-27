@@ -7,7 +7,7 @@ var fileOperation = require('onf-core-model-ap/applicationPattern/databaseDriver
  * Returns name of application to be addressed
  *
  * uuid String 
- * returns inline_response_200_25
+ * returns inline_response_200_56
  **/
 exports.getHttpClientApplicationName = function(uuid, requestUrl) {
   return new Promise(async function (resolve, reject) {
@@ -32,7 +32,7 @@ exports.getHttpClientApplicationName = function(uuid, requestUrl) {
  * Returns release number of application to be addressed
  *
  * uuid String 
- * returns inline_response_200_26
+ * returns inline_response_200_57
  **/
 exports.getHttpClientReleaseNumber = function(uuid, requestUrl) {
   return new Promise(async function (resolve, reject) {
@@ -60,12 +60,9 @@ exports.getHttpClientReleaseNumber = function(uuid, requestUrl) {
  * uuid String 
  * no response value expected for this operation
  **/
-exports.putHttpClientReleaseNumber = function(body, uuid, requestUrl) {
-  return new Promise(async function (resolve, reject) {
-    try {
-      await fileOperation.writeToDatabaseAsync(requestUrl, body, false);
+exports.putHttpClientReleaseNumber = function(body,uuid) {
+  return new Promise(function(resolve, reject) {
       resolve();
-    } catch (error) {}
-    reject();
   });
 }
+

@@ -15,11 +15,7 @@ appCommons.openApiValidatorOptions.validateSecurity = false;
 // swaggerRouter configuration
 var options = {
     routing: {
-        controllers: path.join(__dirname, './controllers'),
-        useStubs: false
-    }, swaggerUI: {
-        swaggerUIPath: '/docs',//null,
-        tryItOutEnabled: true
+        controllers: path.join(__dirname, './controllers')
     },
     openApiValidator: appCommons.openApiValidatorOptions
 };
