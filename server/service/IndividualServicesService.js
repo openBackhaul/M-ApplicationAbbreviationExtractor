@@ -98,10 +98,10 @@ function getHttpClientList() {
         let httpClientPac = layerProtocol[onfAttributes.LAYER_PROTOCOL.HTTP_CLIENT_INTERFACE_PAC];
 
         if (httpClientPac != undefined) {
-          let httpClientCapability = httpClientPac[onfAttributes.HTTP_CLIENT.CAPABILITY];
+          let httpClientCapability = httpClientPac[onfAttributes.HTTP_CLIENT.CONFIGURATION];
           let applicationName = httpClientCapability[onfAttributes.HTTP_CLIENT.APPLICATION_NAME];
 
-          if (applicationName != undefined && applicationName == applicationName) {
+          if (applicationName != undefined) {
             let applicationNameAbbreviation = getUpperLetters(applicationName);
             let clientApplication = new clientApplicationInformation(applicationName, applicationNameAbbreviation);
             httpClientList.push(clientApplication);
