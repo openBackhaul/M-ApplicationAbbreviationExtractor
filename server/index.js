@@ -5,7 +5,7 @@ var http = require('http');
 var appCommons = require('onf-core-model-ap/applicationPattern/commons/AppCommons');
 
 var oas3Tools = require('oas3-tools');
-var serverPort = 8080;
+var serverPort = 9091;
 
 
 // uncomment if you do not want to validate security e.g. operation-key, basic auth, etc

@@ -1,5 +1,5 @@
-IMAGE = aae-0.1
-CONTAINER = M-ApplicationAbbreviationExtractor-0.1
+IMAGE = aae-0.2
+CONTAINER = M-ApplicationAbbreviationExtractor-0.2
 
 # Build docker image
 build:
@@ -19,4 +19,4 @@ clean: rm
 
 # Run docker container
 run: rm
-	docker run -d -p 8080:8080 --name $(CONTAINER) $(IMAGE)
+	docker run -d -p 3008:9091 --name $(CONTAINER) $(IMAGE)
