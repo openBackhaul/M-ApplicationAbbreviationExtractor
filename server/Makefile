@@ -1,8 +1,10 @@
 IMAGE = aae-0.2
 CONTAINER = M-ApplicationAbbreviationExtractor-0.2
+PORT = 3008
 
 # Build docker image
-build:
+image:
+	npm install
 	docker build -t $(IMAGE) .
 
 # Stop docker container
@@ -19,4 +21,4 @@ clean: rm
 
 # Run docker container
 run: rm
-	docker run -d -p 3008:9091 --name $(CONTAINER) $(IMAGE)
+	docker run -d -p $(PORT):9091 --restart always --name $(CONTAINER) $(IMAGE)
