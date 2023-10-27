@@ -1,4 +1,4 @@
-## Implement OAM services
+## Implement Individual services
 
 The services specific to the applications use-cases should be modelled based on the requirement specified in the Open API Specification.
 
